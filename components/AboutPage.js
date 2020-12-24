@@ -2,6 +2,9 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Grid, TextField, Paper } from '@material-ui/core';
 import Contact from "./About/Contactform";
+import Footer from './Footer';
+import ButtonAppBar from './Header/Header';
+
 const useStyles = makeStyles((theme) => ({
     maincontainer: {
         display:"flex",
@@ -22,11 +25,15 @@ export default function AboutPage() {
     const classes = useStyles();
 
     return (
-        <div className={classes.maincontainer}>
-            <div>
-                <h2>This is the About us</h2>
+        <>
+            <ButtonAppBar />
+            <div className={classes.maincontainer}>
+                <div>
+                    <h2>This is the About us</h2>
+                </div>
+                <Contact />
             </div>
-            <Contact />
-        </div>
+            <Footer />
+        </>
     );
 }

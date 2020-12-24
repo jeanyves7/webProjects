@@ -1,28 +1,30 @@
 import React from "react";
-import ButtonAppBar from './components/Header/Header';
+
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./components/RestoComponent/Homepage";
 import AboutPage from './components/AboutPage';
-import Footer from './components/Footer';
-import "../node_modules/bootstrap/dist/css/bootstrap.min.css';
+
+import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 
 import './App.css';
-import Aps from "./loginPage/Appcompo"
+
+import Signin from "./loginPage/login.component";
+import Signup from "./loginPage/signup.component";
 
 
 function App() {
-  return (
-    <div className="App">       
+  return (      
       <Router>
-      <ButtonAppBar />
-          <Switch>
-              <Route path="/" exact component={Home} />
-              <Route exact path="/login" component={Aps} />
-              <Route path="/About"  component={AboutPage} />
-          </Switch>
-        <Footer />
+      
+        <Switch>
+            <Route exact path="/"  component={Home} />
+            <Route path="/signin" component={Signin} />
+            <Route path="/signup" component={Signup} />
+            <Route path="/About"  component={AboutPage} />
+        </Switch>
+        
       </Router>
-    </div>
+    
   );
 }
 

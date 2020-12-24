@@ -65,6 +65,15 @@ export default function ButtonAppBar() {
                         </Button>
                     </Link>
                 </Box>
+                <Box>
+                <Link to="/signin" className={classes.linkText}>
+                        <Button color="inherit">
+                            <Typography variant="h6" className={classes.title}>
+                                Login
+                            </Typography>
+                        </Button>
+                    </Link>
+                </Box>
             </Toolbar>
         </AppBar>
     </div>

@@ -11,7 +11,9 @@ import {loadResto,setPage} from "../../actions/actions";
 import Loader from "../loader/loaders";
 import SnackBar from "../snackBar/RestosnackBars";
 import AlreadyVsnackBar from "../snackBar/AlreadyVisitedSnackBar";
-import Card from "../Card/Cards"
+import Card from "../Card/Cards";
+import Footer from '../Footer';
+import ButtonAppBar from '../Header/Header';
 
 const useStyles=makeStyles({
     appBar: {
@@ -124,9 +126,11 @@ const HomePage = () =>{
   //this condition is to show if we are fetching the data to show the loaders
   if(Loading){
     return <Loader/>
+    
   }else{
     return (
        <>
+       <ButtonAppBar />
         <SnackBar />
         <SearchAppBar />
         <AlreadyVsnackBar  open ={openDuplicateError}  type={"error"} />
@@ -159,6 +163,7 @@ const HomePage = () =>{
     <Typography variant="h5" > No content was found :'( </Typography>
   </Box>
   }
+  <Footer />
    </>
     );
           }
