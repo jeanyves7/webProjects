@@ -36,5 +36,6 @@ public class ClientServiceImp implements ClientService {
     @Override
     public Client addClient(Client cl) {
         return clRepo.save(cl);
+
     }
 }

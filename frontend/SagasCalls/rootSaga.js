@@ -1,17 +1,23 @@
 import {call,all} from 'redux-saga/effects'
-import {LoadRestosWatcher} from "./loadItemSaga";
-import {LoadVRestosWatcher} from "./loadVRestoSaga";
-import {saveRestoWatcher} from "./saveVRestos";
+import {LoadItemWatcher} from "./loadItemSaga";
 import {checkInWatcher} from "./CheckLogedInSaga"
 import {SignUpWatcher} from "./SignUpReducer"
-
+import {CartWatcher} from "./CartSaga"
+import {LoadCartWatcher} from "./LoadCart"
+import {UpdateWatcher} from "./UpdateCart"
+import {DeleteWatcher} from "./DeleteItem"
+import {PurchaseWatcher} from "./Purchased"
 //root saga containg all the watchers needed in our application
 export function* rootSaga(){
     yield all([
-        call(LoadRestosWatcher),
-        call(LoadVRestosWatcher),
-        call(saveRestoWatcher),
+        call(LoadItemWatcher),
         call(checkInWatcher),
         call(SignUpWatcher),
+        call(CartWatcher),
+        call(LoadCartWatcher),
+        call(UpdateWatcher),
+        call(DeleteWatcher),
+        call(PurchaseWatcher)
+        
     ]);
 }

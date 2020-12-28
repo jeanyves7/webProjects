@@ -1,4 +1,4 @@
-import {SET_TYPE,SET_PAGE,SET_SEARCH,SET_SIZE,SET_VISITED_TYPE} from "../actions/actions"
+import {SET_TYPE,SET_PAGE,SET_SEARCH,SET_SIZE} from "../actions/actions"
 
 
 //default initial states of the type,pages,size and search field
@@ -7,7 +7,7 @@ const initalState={
     size:4,
     page:1,
     search:"",
-    VisitedType:"All",
+
 }
 
 const TypeReducer =(state=initalState,action)=>{
@@ -20,9 +20,6 @@ const TypeReducer =(state=initalState,action)=>{
             return {...state,page:action.payload};
         case SET_SEARCH:
             return {...state,search:action.payload};
-        case SET_VISITED_TYPE:
-            console.log(1);
-            return {...state,VisitedType:action.payload};
         default:
             return state;
     }

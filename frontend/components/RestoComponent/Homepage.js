@@ -3,14 +3,12 @@ import Pagina from '../Pagination/pagination';
 import {  Dialog,Box,Slide, Typography} from "@material-ui/core";
 import {useDispatch,useSelector} from "react-redux";
 import { makeStyles} from "@material-ui/core/styles";
-import Resto from "../RestoComponent/restoPrototype";
 import SearchAppBar from "../Header/searchbar";
 import {Link} from "react-router-dom";
 import Info from "./ItemInfo";
 import {loadItem,setPage} from "../../actions/actions";
 import Loader from "../loader/loaders";
 import SnackBar from "../snackBar/RestosnackBars";
-import AlreadyVsnackBar from "../snackBar/AlreadyVisitedSnackBar";
 import Card from "../Card/Cards";
 import Footer from '../Footer';
 import ButtonAppBar from '../Header/Header';
@@ -79,8 +77,8 @@ const HomePage = () =>{
     const page= useSelector(state => state.Type.page);
     const size= useSelector(state => state.Type.size);
     
-    const openSaveSuccess = useSelector(state => state.Visited.onSuccess);
-    const openDuplicateError = useSelector(state => state.Visited.duplicateVError);
+
+
 
     const dispatch = useDispatch();
 
@@ -126,28 +124,24 @@ const HomePage = () =>{
 
 
   //this condition is to show if we are fetching the data to show the loaders
-  if(Loading){
-    return <Loader/>
-    
-  }else{
+  
     return (
        <>
        <ButtonAppBar />
         <SnackBar />
         <SearchAppBar />
-        <AlreadyVsnackBar  open ={openDuplicateError}  type={"error"} />
-        <AlreadyVsnackBar  open ={openSaveSuccess}  type={"success"} />
+    
         {!empty ?
           <> 
         <Box  spacing={5} className={classes.RestoContainer} >
         {console.log(Items)}
           {Items.map(items=>(
               
-              <Box   p={1} m={1} key={1}>
+              <Box   p={1} m={1} key={items.id}>
                   <Link onClick={()=>handleClickOpen(items.id)} to="" className={classes.linkText} >
                          <Card  className={classes.linkText} key={items.id} id={items.id} av={(items.type)[0]} titl={items.name} img={items.img} description={items.description} price={items.price} />
                   </Link>
-                  <Dialog fullScreen open={open===1} onClose={handleClose} TransitionComponent={Transition} key={1} >
+                  <Dialog fullScreen open={open===items.id} onClose={handleClose} TransitionComponent={Transition} key={1} >
                       <Info  key={items.id}  name={items.name} type={items.type} cost={items.price}  description={items.description} image={items.img} close={handleClose}  />
                   </Dialog>
               </Box>
@@ -170,5 +164,5 @@ const HomePage = () =>{
    </>
     );
           }
-}
+
 export default HomePage;

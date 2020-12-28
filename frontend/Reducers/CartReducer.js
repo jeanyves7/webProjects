@@ -1,4 +1,4 @@
-import {ADD_CART} from "../actions/actions"
+import {SET_CART} from "../actions/actions"
 
 const initial={
     items:[]
@@ -6,10 +6,8 @@ const initial={
 
 const cartReducer= (state=initial,action)=>{
     switch(action.type){
-        case ADD_CART:
-            console.log(action.payload);
-            console.log(state.items );
-            return {...state,items:[...state.items,action.payload]}
+        case SET_CART:
+            return {...state,items:action.payload}
             default:
                 return state;
     }

@@ -3,17 +3,52 @@ import Footer from './Footer';
 import ButtonAppBar from './Header/Header';
 import { Link } from "react-router-dom";
 import {useDispatch,useSelector} from "react-redux";
+import {loadCart,updateQty,deleteItem,purchase} from "../actions/actions"
 
 
 export default function Addcart() {
 
     const Card= useSelector(state => state.cart.items);
+    let price=0;
+    Card.map(item=>{
+        price=price+(item.price*item.qty)
+    })
+    console.log(Card)
+   const dispatch=useDispatch();
 
     useEffect(()=>{
+        dispatch(loadCart())
+    },[])
 
-    },Card)
+    const handleQ=(e)=>{
+        let id=e.target.id
+        id=parseInt(id)
+        let Qty=e.target.value
+        Qty=parseInt(Qty)
+     const data={
+         idi:id,
+         qty:Qty
+         
+     }
+      console.log(data)
+      dispatch(updateQty(data))
 
-    console.log(Card);
+    }
+
+    const handleD=(e)=>{
+        let id=e.target.id
+        id=parseInt(id)
+        const data={
+            idi:id
+        }
+        dispatch(deleteItem(data))
+    }   
+
+    const handleP=(e)=>{
+        console.log(Card)
+        dispatch(purchase(Card))
+    }
+
     return (
         <>
             <ButtonAppBar />
@@ -32,9 +67,10 @@ export default function Addcart() {
                     </li>
                     
                     {Card.map(item=>(
-                    <li key={item.id}>
+                    <>  
+                    <li key={item.idI}>
                         <div className="cart-image">
-                            <img src={item.image} alt="product" />
+                            <img src={item.img} alt="product" />
                         </div>
                         <div className="cart-name">
                             <div>
@@ -44,20 +80,21 @@ export default function Addcart() {
                             </div>
                             <div>
                                 Qty:
-                                <select>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
+                                <select key={item.idI}  id={item.idI} onChange={handleQ}>
+                                    <option value={1}>1</option>
+                                    <option value={2}>2</option>
+                                    <option value={3}>3</option>
                                 </select>
-                                <button type="button" className="button-delete" >
+                                <button id={item.idI} type="button" className="button-delete" onClick={handleD} >
                                     Delete
                                 </button>
                             </div>
                         </div>
                         <div className="cart-price">
-                        {item.price}
+                        {item.price*item.qty}
                         </div>
                     </li>
+                    </>
                     ))}
                     
                 </ul>
@@ -65,14 +102,14 @@ export default function Addcart() {
                 </div>
                 <div className="cart-action">
                 <h3>
-                    Subtotal (3 items)
+                    Subtotal ({Card.length} items)
                     :
-                    $ 3500
+                    $ {price}
                 </h3>
-                <button className="button primary full-width">
+                <button onClick={handleP} className="button primary full-width">
                     Proceed to Checkout
                 </button>
-
+                        
                 </div>
 
             </div>

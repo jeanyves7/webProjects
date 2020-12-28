@@ -11,4 +11,5 @@ public interface ClientRepository extends CrudRepository<Client,Long> {
     Client findByEmail(String email);
     int countByEmail(String email);
     int countByEmailAndPassword(String email,String password);
+
 }

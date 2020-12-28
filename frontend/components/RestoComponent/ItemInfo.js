@@ -9,7 +9,7 @@ import {
 import {Description, Home} from "@material-ui/icons";
 
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles((_theme) => ({
     appBar: {
         position: 'relative',
       },
@@ -44,7 +44,7 @@ const Info = ({name,type,cost,description,image,close}) =>{
         const spaceGap=[1,1,1];
         return (
         <Paper elevation={0}>
-                {spaceGap.map(i=>(<Typography variant={"h4"} style={{background:"#757C88",paddingTop:"20px"}}/> ))}
+                {spaceGap.map(_=>(<Typography variant={"h4"} style={{background:"#757C88",paddingTop:"20px"}}/> ))}
         </Paper>
         );
     }

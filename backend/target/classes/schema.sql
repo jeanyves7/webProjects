@@ -10,7 +10,7 @@ Create Table items(
 );
 
 
-Drop table if exists clients;
+
 Create TABLE IF NOT EXISTS clients(
     idC SERIAL,
     email VARCHAR(1000),
@@ -20,3 +20,26 @@ Create TABLE IF NOT EXISTS clients(
     primary key (idC)
 );
 
+
+drop table  if exists cart;
+CREATE TABLE  cart(
+    id SERIAL,
+    idC BIGINT,
+    idI BIGINT,
+    img varchar(50),
+    name varchar(100),
+    price BIGINT,
+    qty BIGINT,
+    primary key (id)
+);
+
+CREATE TABLE IF NOT EXISTS purchased(
+            id SERIAL,
+            idC BIGINT,
+            idI BIGINT,
+            img varchar(50),
+            name varchar(100),
+            price BIGINT,
+            qty BIGINT,
+            primary key (id)
+);

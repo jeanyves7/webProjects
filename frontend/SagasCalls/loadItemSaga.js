@@ -4,11 +4,11 @@ import {getItems,getNItems} from "../api/apiCalls";
 
 //watcher that will be pass the to the root saga
 //watching if any load all restaurants event is being dispatched
-export function* LoadRestosWatcher(){
-    yield takeLatest(LOAD_ITEM,LoadRestoFlow)
+export function* LoadItemWatcher(){
+    yield takeLatest(LOAD_ITEM,LoadItemFlow)
 }
 
-function* LoadRestoFlow(action){
+function* LoadItemFlow(action){
    let items;
    // when a dispatch has been made we set the loaders to appear
    let isloading=true;

@@ -56,6 +56,7 @@ export default function RecipeReviewCard({id,av,titl,description,img,price}) {
   const [expanded, setExpanded] = React.useState(false);
 
   const login=useSelector(state=>state.login.logIn)
+  const idc=useSelector(state=>state.login.idC)
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
@@ -65,10 +66,12 @@ export default function RecipeReviewCard({id,av,titl,description,img,price}) {
     e.preventDefault();
     e.stopPropagation();
     const data={
-        id:id,
+        idC:idc,
+        idI:id,
+        img:img,
         name:titl,
         price:price,
-        image:img
+        qty:1
     }
     dispatch(addCart(data));
   }

@@ -1,9 +1,8 @@
 //Every action type will be associated a number in the comments
 
-//actions for handling the visited restaurants
-export const ADD_VRESTO="ADD_VRESTO";   //1
-export const LOAD_VRESTO="LOAD_VRESTO"; //2
-export const SET_VRESTO="SET_VRESTO";   //3
+import { purchased } from "../api/apiCalls";
+
+
 
 //actions for handling the Restaurants 
 export const SET_ITEM="SET_ITEM";     //4
@@ -12,11 +11,11 @@ export const LOAD_NRESTO="LOAD_NRESTO"; //6
 
 //actions for handling the Loaders while fetching the data
 export const LOADING_ITEM_DATA="LOADING_ITEM_DATA";        //7
-export const LOADING_VRESTO_DATA="LOADER_VRESTO_DATA";      //8
+
 
 //actions for handling the errirs
 export const SET_RESTO_ERROR="SET_RESTO_ERROR";         //9
-export const SET_VISITED_ERROR="SET_VISITED_ERROR";     //10
+
 
 //actions related to the general search
 export const SET_TOTAL_PAGES="SET_TOTAL_PAGES";   //11
@@ -26,9 +25,6 @@ export const SET_SEARCH="SET_SEARCH";             //14
 export const SET_SIZE="SET_SIZE";                 //15
 export const SET_VISITED_TYPE="SET_VISITED_TYPE";  //16
 
-//actions related to the success of adding a a visited restaurant to the backend
-export const SET_DUPLICATE_ERRPR="SET_DUPLICATE_ERROR" //17
-export const SET_SUCCESS_SAVE="SET_SUCCESS_SAVE"       //18
 
 export const ADD_CART="ADD_CART"//19
 
@@ -36,26 +32,13 @@ export const SET_IN="SET_IN"//20
 export const SET_OUT="SET_OUT"//21
 export const CHECK_IN="CHECK_IN"//22
 export const SIGN_UP="SIGN_UP"//23
-
-//Visited section:
-//1
-export const addVResto = (Resto) =>({
-    type:ADD_VRESTO,
-    payload:Resto,
-});
-
-//2
-export const loadVResto =(data) =>({
-    type:LOAD_VRESTO,
-    payload:data
-});
-
-//3
-export const setVResto = (Resto) =>({
-    type:SET_VRESTO,
-    payload:Resto
-
-});
+export const SET_IDC="SET_IDC"//24
+export const SEND_FEED="SEND_FEED"//25
+export const SET_CART="SET_CART"//26
+export const LOAD_CART="LOAD_CART"//27
+export const UPDATE_CART="UPDATE_CART"//28
+export const DELETE_ITEM="DELETE_ITEM"//29
+export const PURCHASED="PURCHASED"//30
 
 //All restaurants section:
 //4
@@ -85,11 +68,7 @@ export const loadingItem= (load) =>({
     payload:load,
 });
 
-//8 => Visited Restaurants
-export const loadingVResto= (load) =>({
-    type:LOADING_VRESTO_DATA,
-    payload:load,
-});
+
 
 //Error Section:
 //9 => All restaurants
@@ -98,11 +77,6 @@ export const setRestoError=(data)=>({
     payload:data,
 });
 
-//10 => Visited Restaurants
-export const setVisitedError=(data)=>({
-    type:SET_VISITED_ERROR,
-    payload:data,
-});
 
 
 //General Search section:
@@ -136,25 +110,6 @@ export const setSize=(data)=>({
     payload:data,
 });
 
-//16 
-export const setVisitedType=(data)=>({
-    type:SET_VISITED_TYPE,
-    payload:data,
-});
-
-//17
-export const setDuplicateError=(data)=>({
-    type:SET_DUPLICATE_ERRPR,
-    payload:data,
-});
-
-//18
-export const setSuccessSave=(data)=>({
-    type:SET_SUCCESS_SAVE,
-    payload:data,
-})
-
-
 //19
 export const addCart=(data)=>({
     type:ADD_CART,
@@ -182,4 +137,45 @@ export const checkIn=(data)=>({
 export const signUp=(data)=>({
     type:SIGN_UP,
     payload:data,
+})
+
+//24
+export const setIdClient=(data)=>({
+    type:SET_IDC,
+    payload:data
+})
+
+//25
+export const sendFeed=(data)=>({
+    type:SEND_FEED,
+    payload:data,
+})
+
+//26
+export const setCart=(data)=>({
+    type:SET_CART,
+    payload:data
+})
+
+//27
+export const loadCart=()=>({
+    type:LOAD_CART,
+})
+
+//28 
+export const updateQty=(data)=>({
+    type:UPDATE_CART,
+    payload:data,
+})
+
+//29
+export const deleteItem=(data)=>({
+    type:DELETE_ITEM,
+    payload:data
+})
+
+//30
+export const  purchase=(data)=>({
+    type:PURCHASED,
+    payload:data
 })

@@ -1,4 +1,5 @@
 import api from "./index"
+import {useDispatch,useSelector} from "react-redux";
 
 //api call for all the restaurants
 export const getItems =  async (restos) => { 
@@ -32,28 +33,7 @@ export const getNItems =  async (restos) => {
     }
 }
 
-//api call to get the visited restaurants
-export const getVRestos= async (data) =>{
-    try{
-    const type=data.action.payload.type
-    const res = await api.get(`VisitedRestaurants/${type}`);
-    return res.data;
-    }catch (error) {
-        console.log(error);
-    }
-}
 
-//api call to set the visited restaurant
-export const postVRestos =  async (data) =>{
-    //data represents the type of restaurant that we want to show in the visited Table 
-    //By default it's All we are requesting all type of visited restaurants
-    try {
-        const res = await api.post("/VisitedRestaurants", data);
-        return res.data;
-    } catch (error) {
-        console.log(error);
-    }
-}
 
 export const CheckLogIn=async(data)=>{
     console.log(data.action.payload.Email)
@@ -72,5 +52,63 @@ export const SignUp=async(data)=>{
        return res.data;
     }catch(error){
         console.log(error);
+    }
+}
+
+export const feedBack=async(data)=>{
+    console.log(data)
+    try{
+       const res=await api.post("/client/feedBack",data)
+       return res.data;
+    }catch(error){
+        console.log(error);
+    }
+}
+
+export const addCart=async(data)=>{
+    try{
+        const res=await api.post("/client/cart",data)
+        return res.data;
+     }catch(error){
+         console.log(error);
+     }
+}
+
+export const loadCart=async()=>{
+    try{
+        const res=await api.get("/client/cart")
+        return res.data;
+    }catch(error){
+        console.log(error)
+    }
+}
+
+export const UpdateCart=async(data)=>{
+    const id=data.action.payload.idi;
+    const qty=data.action.payload.qty;
+    try{
+        const res=await api.patch(`/client/Cart/qty/?id=${id}&qty=${qty}`)
+        return res.data
+    }catch(error){
+        console.log(error)
+    }
+}
+
+export const deleteItem=async(data)=>{
+    const id=data.action.payload.idi;
+    try{
+        const res=await api.post(`/client/delete/item/?id=${id}`)
+        return res.data
+    }catch(error){
+        console.log(error)
+    }
+}
+
+export const purchased=async(data)=>{
+    try{
+        const res=await api.post("/client/purchased",data);
+        return res.data
+    }catch(error){
+        console.log(error)
     }
 }
