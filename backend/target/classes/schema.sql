@@ -43,3 +43,13 @@ CREATE TABLE IF NOT EXISTS purchased(
             qty BIGINT,
             primary key (id)
 );
+drop table if exists is_Logged;
+Create TABLE if not exists isLogged(
+    id SERIAL,
+    idC      BIGINT,
+    email    VARCHAR(1000),
+    password varchar(50),
+    firstN   VARCHAR(50),
+    lastN    VARCHAR(50),
+    primary key (id)
+);

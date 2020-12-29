@@ -4,8 +4,10 @@ package com.cmeboot.app.controller;
 import com.cmeboot.app.model.Cart;
 import com.cmeboot.app.model.Client;
 import com.cmeboot.app.model.Purchased;
+import com.cmeboot.app.model.isLogged;
 import com.cmeboot.app.service.CartServiceImp;
 import com.cmeboot.app.service.ClientServiceImp;
+import com.cmeboot.app.service.IsLogedServiceImp;
 import com.cmeboot.app.service.PurchasedServiceImp;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -31,6 +33,9 @@ public class ClientController {
     @Autowired
     PurchasedServiceImp purServ;
 
+    @Autowired
+    IsLogedServiceImp isServ;
+
     @GetMapping("/id/{id}")
     public ResponseEntity<Client> getCl(@PathVariable Long id){
         return  new ResponseEntity<>(cloServ.getClient(id), HttpStatus.OK);
@@ -39,8 +44,28 @@ public class ClientController {
     @GetMapping("/login")
     public ResponseEntity<Client> getCl(@RequestParam("email") String email,@RequestParam("password") String password) {
         if (cloServ.isSignUp(email,password)) {
+            Client cl=cloServ.getClient(email);
+            isLogged il=new isLogged();
+            il.setIdC(cl.getIdC());
+            il.setEmail(cl.getEmail());
+            il.setFirstN(cl.getFirstN());
+            il.setLastN(cl.getLastN());
+            il.setPassword(cl.getPassword());
+            isServ.addItem(il);
             return new ResponseEntity<>(cloServ.getClient(email), HttpStatus.OK);
         } else return new ResponseEntity<>(null, HttpStatus.OK);
+    }
+
+    @GetMapping("/CheckClient")
+    public ResponseEntity<isLogged> checkClient(){
+        return new ResponseEntity<>(isServ.checK(),HttpStatus.OK);
+    }
+
+    @Transactional
+    @GetMapping("logOut")
+    public ResponseEntity<Client> logOut(){
+        isServ.deleteAll();
+        return new ResponseEntity<>(null,HttpStatus.OK);
     }
 
     @GetMapping("/cart")
