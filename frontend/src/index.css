@@ -1,24 +1,27 @@
 @import url('https://fonts.googleapis.com/css?family=Fira+Sans:400,500,600,700,800');
 
+
+
 * {
   box-sizing: border-box;
 }
+
 body {
-  background: #1C8EF9 !important;
-  min-height: 100vh;
-  display: flex;
+  background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
+  /* display: flex; */
   font-weight: 400;
   font-family: 'Fira Sans', sans-serif;
 }
 
-h1,h2,h3,h4,h5,h6,label,span {
+/* h1,h2,h3,h4,h5,h6,label,span {
   font-weight: 500;
   font-family: 'Fira Sans', sans-serif;
-}
+} */
 
-body, html, .App, #root, .auth-wrapper {
+.App, #root, .auth-wrapper {
   width: 100%;
   height: 100%;
+  min-height: 100vh;
 }
 
 .navbar-light {
@@ -73,6 +76,24 @@ body, html, .App, #root, .auth-wrapper {
 }
 
 /* Cart  */
+.Thankyou {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 32px;
+  letter-spacing: 0px;
+  word-spacing: 2.8px;
+  font-weight: 700;
+  text-decoration: overline solid #1A237E;
+  font-style: normal;
+  font-variant: small-caps;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 35px;
+  margin: 40px;
+  background-image: linear-gradient(to right, #eea2a2 0%, #bbc1bf 19%, #57c6e1 42%, #b49fda 79%, #7ac5d8 100%);
+  border-radius: 20%;
+  box-shadow: 0px 5px 20px rgb(71,71,71)
+
+}
 .cart {
   display: flex;
   flex-wrap: wrap;
@@ -143,3 +164,16 @@ body, html, .App, #root, .auth-wrapper {
   border-radius: 0.5rem;
   cursor: pointer;
 }
+
+.NavBarcolor {
+  background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
+}
+
+/* #Carousel */
+.w100 {
+  height: 300px;
+  width: 80%;
+  margin-top: 2%;
+  margin-left: 10%;
+}
+

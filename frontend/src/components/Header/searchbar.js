@@ -23,9 +23,10 @@ const useStyles = makeStyles((theme) => ({
   search: {
     position: 'relative',
     borderRadius: theme.shape.borderRadius,
-    backgroundColor: fade(theme.palette.common.white, 0.15),
+    boxShadow: "0px 5px 5px rgb(71,71,71)",
+    backgroundImage: "linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%)",
     '&:hover': {
-      backgroundColor: fade(theme.palette.common.white, 0.25),
+      boxShadow: "0 16px 70px -12.125px rgba(0,0,0,0.3)"
     },
     marginLeft: 0,
    
@@ -45,7 +46,7 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'center',
   },
   inputRoot: {
-    color: 'inherit',
+    // color: 'inherit',
   },
   inputInput: {
     padding: theme.spacing(1, 1, 1, 0),
@@ -129,7 +130,7 @@ export default function SearchAppBar() {
 
 return (
   <div className={classes.root}>
-      <AppBar position="static" style={{background:"#778899"}} >
+      <AppBar position="static" style={{backgroundColor: "white"}} >
         <Toolbar>
             <Box   className={classes.headers}>
               {!isMobile? (

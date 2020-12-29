@@ -24,8 +24,9 @@ const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: 345,
     color:"gray",
+    height:"400px",
     borderRadius:"10%",
-    boxShadow: "0 8px 40px -40px rgba(255,215,0,0.3)",
+    boxShadow: "0px 5px 20px rgb(71,71,71)",
     "&:hover": {
       boxShadow: "0 16px 70px -12.125px rgba(0,0,0,0.3)",
      

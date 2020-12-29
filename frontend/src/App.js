@@ -5,6 +5,7 @@ import Home from "./components/ItemComponent/Homepage";
 import AboutPage from './components/AboutPage';
 import Addcart from './components/addtocart';
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 import './App.css';
 
@@ -15,14 +16,13 @@ import Signup from "./loginPage/signup.component";
 function App() {
   return (      
       <Router>
-      
-        <Switch>
-            <Route exact path="/"  component={Home} />
-            <Route path="/cart" component={Addcart} />
-            <Route path="/signin" component={Signin} />
-            <Route path="/signup" component={Signup} />
-            <Route path="/About"  component={AboutPage} />
-        </Switch>
+          <Switch>
+              <Route exact path="/"  component={Home} />
+              <Route path="/cart" component={Addcart} />
+              <Route path="/signin" component={Signin} />
+              <Route path="/signup" component={Signup} />
+              <Route path="/About"  component={AboutPage} />
+          </Switch>
         
       </Router>
     

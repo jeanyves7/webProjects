@@ -52,6 +52,9 @@ export default function Addcart() {
     return (
         <>
             <ButtonAppBar />
+            <div className="Thankyou">
+                <h1>Thank You! Come Again!! :)</h1>
+            </div>
             <div className="cart">
                 <div className="cart-list">
                 <ul className="cart-list-container">

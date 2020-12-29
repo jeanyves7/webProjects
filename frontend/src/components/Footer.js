@@ -5,14 +5,15 @@ import { Twitter, Facebook, Instagram, LinkedIn } from '@material-ui/icons';
 
 const useStyles = makeStyles((theme) => ({
     upperContainer: {
-        background: "rgb(187,84,37)",
+        backgroundImage: "linear-gradient(to right, #6a11cb 0%, #2575fc 100%)",
+        color: "white",
         height: "30vh",
         textAlign: "center",
         alignItems: "center"
     },
     lowerContainer: {
-        height: "10vh",
-        background: "rgb(81,18,6)",
+        height: "5vh",
+        background: "linear-gradient(to top, #09203f 0%, #537895 100%)",
         textAlign: "left",
         alignItems: "center",
         paddingRight: "10%"
@@ -32,15 +33,14 @@ export default function Footer() {
     const classes = useStyles();
 
     return (
-        <div>
+        <footer>
             <Grid container className={classes.upperContainer}>
                 <Grid item p={2} xs={1}>
-                    <h2>IRD</h2>
+                    <h2>E-tech</h2>
                 </Grid>
                 <Grid item xs={5}>
                     <ul className={classes.bar}>
                         <li>Home</li>
-                        <li>Chart</li>
                         <li>About us</li>
                     </ul>
                 </Grid>
@@ -52,8 +52,8 @@ export default function Footer() {
                 </Grid>                
             </Grid>
             <Box className={classes.lowerContainer}>
-                <p style={{ margin:"0",color:"white" }}>2020 © IRD All Rights Reserved.</p>
+                <p style={{ margin:"0",color:"white" }}>2020 © E-tech All Rights Reserved.</p>
             </Box>
-        </div>
+        </footer>
     );
 }
