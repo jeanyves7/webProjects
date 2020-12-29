@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 //All types used in the Application for now if we want to update the app to add more types we can simply add it to this type field
-const Types=["All","Electronics","American","Japanese","French","Italian","Mexican"]
+const Types=["All","Laptop","Iphone","Headset","Speakers","Italian","Mexican"]
 
 export default function TypeInput() {
   const classes = useStyles();
