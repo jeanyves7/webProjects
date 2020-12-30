@@ -11,7 +11,7 @@ INSERT INTO items(name,type,price,description,img) Values
 ('iphone se','Iphone','399','4.7” Retina HD display 4G LTE cellular4','/Gallery/iphone se.jpg'),
 ('MSI GH70','Headset','99','MSI Immerse GH70 Gaming Headset','/Gallery/MSI.jpg'),
 ('MSI GH60','Headset','199','MSI Immerse GH60 Gaming Headset','/Gallery/GH60.jpg'),
-('Razer RZ04','Headset','149','4.7” Retina HD display 4GRazer RZ04-02051000-R3M1 Kraken Tournament Edition Black LTE cellular4','/Gallery/Razer.jpg'),
+('Razer RZ04','Headset','149','4.7” Retina HD display 4GRazer RZ04-02051000-R3M1 Kraken LTE cellular4','/Gallery/Razer.jpg'),
 ('XPG H30','Headset','59','XPG EMIX H30 SE Gaming Wired Headset','/Gallery/XPG.jpg'),
 ('Logitech','Speakers','59','Logitech Ultimate Ears Wonderboom Portable Wireless Speaker','/Gallery/Logitech.jpg'),
 ('Thermaltake','Speakers','59','Thermaltake BATTLE DRAGON HT-GVD-DISPBK-01 Wireless Speakers','/Gallery/Thermaltake.jpg'),
