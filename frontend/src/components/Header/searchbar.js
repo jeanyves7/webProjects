@@ -106,47 +106,54 @@ export default function SearchAppBar() {
   }
 
   //function to display the search bar input
-  const displaySearchInput = () =>{
-    return ( 
-    <Box  p={1}>
-      <div className={classes.search}>
-          <div className={classes.searchIcon}>
-              <SearchIcon  />
-          </div>
-          <InputBase
-              placeholder="Search…"
-              value={current}
-              onChange={updateSearch}
-              onKeyDown={handleKeyDown}
-              classes={{
-                  root: classes.inputRoot,
-                  input: classes.inputInput,
-                }}
-              inputProps={{ 'aria-label': 'search' }}
-          />
-      </div>
-    </Box>);
-  }
+  // const displaySearchInput = () =>{
+  //   return ( 
+    
+  //     <div className={classes.search}>
+  //         <div className={classes.searchIcon}>
+  //             <SearchIcon  />
+  //         </div>
+  //         <InputBase
+  //             placeholder="Search…"
+  //             value={current}
+  //             onChange={updateSearch}
+  //             onKeyDown={handleKeyDown}
+  //             classes={{
+  //                 root: classes.inputRoot,
+  //                 input: classes.inputInput,
+  //               }}
+  //             inputProps={{ 'aria-label': 'search' }}
+  //         />
+  //     </div>
+  //   );
+  // }
 
 return (
   <div className={classes.root}>
-      <AppBar position="static" style={{backgroundColor: "white"}} >
+      <AppBar position="static" style={{backgroundColor: "rgb(99 189 241)"}} >
         <Toolbar>
             <Box   className={classes.headers}>
-              {!isMobile? (
-                displaySearchInput()
-             )
-                // if we are in mobile forme we don't want to display the searchBar input 
-               : <> </>}
-              <Box  p={1}>
-              <TypeInput />
-              </Box>
-              <Box p={1}>
-             
-              <Button style={{background:"orange"}} onClick={getSearch} >
+              <Box  p={1} className="search-form">
+                  {!isMobile? (
+                    <input className="search-bar" type="text" value={current} onChange={updateSearch} onKeyDown={handleKeyDown} inputProps={{ 'aria-label': 'search' }}/>
+                )
+                    // if we are in mobile forme we don't want to display the searchBar input 
+                  : <> </>}
+
+                <button className="search-button" onClick={getSearch}>
+                  Search
+                </button>
+                {/* <div>
+                  <Button style={{background:"orange"}} onClick={getSearch} >
                       <Typography >SEARCH</Typography>
                   </Button>
+                </div> */}
+             </Box>
+
+              <Box  p={1}>
+                <TypeInput />
               </Box>
+              
               <Box  p={1} >
               <SizeInput />
               </Box>
@@ -154,17 +161,16 @@ return (
             </Box>
       </Toolbar>
     </AppBar>
-    {isMobile?
-        // if we are in mobile forme we want to display the search input in a second AppBar
-         <AppBar position="static" >
-            <Toolbar>
-              <Box   className={classes.headers}>
-                  {displaySearchInput()}
-              </Box>
-            </Toolbar>
-          </AppBar>
-    :<> </>
-    }
+      {/* {isMobile?
+          // if we are in mobile forme we want to display the search input in a second AppBar
+            <AppBar position="static" >
+              <Toolbar>
+                <Box   className={classes.headers}>
+                    {displaySearchInput()}
+                </Box>
+              </Toolbar>
+            </AppBar>
+      :<> </> */}
   </div>
   );
 }

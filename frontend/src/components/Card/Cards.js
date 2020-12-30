@@ -97,11 +97,14 @@ export default function RecipeReviewCard({id,av,titl,description,img,price}) {
         }
         title={titl}
       />
-      <CardMedia
-        className={classes.media}
-        image={img}
-        title="Paella dish"
-      />
+      <div className="imgcontainer">
+        <img src={img} alt=""></img>
+      </div>
+      {/* // <CardMedia
+      //   className={classes.media}
+      //   image={img}
+      //   title="Paella dish"
+      // /> */}
       <CardContent>
         <Typography variant="body2" color="textSecondary" component="p">
           {description}

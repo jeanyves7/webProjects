@@ -12,8 +12,9 @@ const useStyles = makeStyles((theme) => ({
     minWidth: 60,
     paddingLeft: "10px",
     borderRadius: "10%",
-    boxShadow: "0px 5px 5px rgb(71,71,71)",
-    backgroundImage: "linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%)"
+    // boxShadow: "0px 5px 5px rgb(71,71,71)",
+    backgroundColor: "lightblue"
+    // backgroundImage: "linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%)"
   },
 }));
 

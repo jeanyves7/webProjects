@@ -13,13 +13,14 @@ const useStyles = makeStyles((theme) => ({
     minWidth: 100,
     paddingLeft: "10px",
     borderRadius: "10%",
-    boxShadow: "0px 5px 5px rgb(71,71,71)",
-    backgroundImage: "linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%)"
+    boxShadow: "0px 5px 5px linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%)",
+    backgroundColor: "lightblue"
+    // backgroundImage: "linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%)"
   },
 }));
 
 //All types used in the Application for now if we want to update the app to add more types we can simply add it to this type field
-const Types=["All","Laptop","Iphone","Headset","Speakers","Italian","Mexican"]
+const Types=["All","Laptop","Iphone","Headset","Speakers"]
 
 export default function TypeInput() {
   const classes = useStyles();
