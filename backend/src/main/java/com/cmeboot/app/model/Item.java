@@ -34,6 +34,18 @@ public class Item {
         this.img = img;
     }
 
+    @Override
+    public String toString() {
+        return "Item{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", type='" + type + '\'' +
+                ", price='" + price + '\'' +
+                ", description='" + description + '\'' +
+                ", img='" + img + '\'' +
+                '}';
+    }
+
     public Item() {
 
     }

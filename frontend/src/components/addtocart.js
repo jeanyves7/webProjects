@@ -2,7 +2,7 @@ import React , {useEffect} from 'react';
 import Footer from './Footer';
 import ButtonAppBar from './Header/Header';
 import {useDispatch,useSelector} from "react-redux";
-import {loadCart,updateQty,deleteItem,purchase} from "../actions/actions"
+import {loadCart,updateQty,deleteItem,purchase,setDelete,checkOutCount} from "../actions/actions"
 
 
 const qty=[1,2,3,4,5,6,7,8,9]
@@ -10,7 +10,11 @@ export default function Addcart() {
 
     const Card= useSelector(state => state.cart.items);
     let price=0;
-    Card.map(item=>{
+    let Carts=[]
+    if(typeof(Card)==='object'){
+        Carts=Card
+    }
+    Carts.map(item=>{
         price=price+(item.price*item.qty)
     })
    
@@ -41,14 +45,17 @@ export default function Addcart() {
         const data={
             idi:id
         }
+        dispatch(setDelete())
         dispatch(deleteItem(data))
     }   
 
     const handleP=(e)=>{
         console.log(Card)
+        dispatch(checkOutCount())
         dispatch(purchase(Card))
     }
-
+   
+   
     return (
         <>
             <ButtonAppBar />
@@ -69,7 +76,7 @@ export default function Addcart() {
                     </div>
                     </li>
                     
-                    {Card.map(item=>(
+                    {Carts.map(item=>(
                     <>  
                     <li key={item.idI}>
                         <div className="cart-image">
@@ -105,7 +112,7 @@ export default function Addcart() {
                 </div>
                 <div className="cart-action">
                 <h3>
-                    Subtotal ({Card.length} items)
+                    Subtotal ({Carts.length} items)
                     :
                     $ {price}
                 </h3>

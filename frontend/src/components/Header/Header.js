@@ -40,6 +40,9 @@ export default function ButtonAppBar() {
   const classes = useStyles();
 
   const login=useSelector(state=>state.login.logIn)
+  const Card= useSelector(state => state.cart.count);
+
+ 
   const dispatch=useDispatch();
   const handleLogOut=(e)=>{
     dispatch(logOut())
@@ -78,7 +81,7 @@ export default function ButtonAppBar() {
                         <Link to="/cart">
                             <Button color="inherit" className={classes.linkText}>
                                 {/* <Typography variant="h6" className={classes.title}> */}
-                                <Badge badgeContent={4} color="secondary">
+                                <Badge badgeContent={Card} color="secondary">
                                     <ShoppingCart />
                                 </Badge>
                                 {/* </Typography> */}

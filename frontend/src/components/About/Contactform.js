@@ -2,7 +2,8 @@ import React,{useState} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Grid, TextField, Paper, FormLabel,TextareaAutosize } from '@material-ui/core';
 import {useDispatch,useSelector} from "react-redux";
-
+import {sendFeed, setEmail} from "../../actions/actions"
+import { Link } from "react-router-dom";
 const useStyles = makeStyles((theme) => ({
     papercontent : {
         margin: theme.spacing(5),
@@ -29,8 +30,10 @@ export default function Contact() {
     const [firstName,setFName]=useState("");
     const [lastName,setLName]=useState("");
     const [Email,SetEmail]=useState("");
-    const [num,setNum]=useState("");
+    const [number,setNum]=useState("");
     const [feed,setFeed]=useState("");
+
+    const dispatch=useDispatch();
 
     const handleF=(e)=>{
         setFName(e.target.value)
@@ -55,16 +58,28 @@ export default function Contact() {
     const handleSubmit=(e)=>{
         const data={
             idC:idc,
+            fname:firstName,
+            lname:lastName,
             email:Email,
-            firstN:firstName,
-            lastN:lastName,
+            num:number,
             feedback:feed,
         }
+        console.log(data)
+        dispatch(sendFeed(data))
+        setFName("")
+        setLName("")
+        setNum("")
+        setEmail("")
+        setFeed("")
     }
 
     return (
         <Paper className={classes.papercontent}>
-            <h2 style={{ marginBottom:"50px" }} >Send us Your Feedback</h2>  <button onClick={handleSubmit} >submit</button>
+           
+            <h2 style={{ marginBottom:"50px" }} >Send us Your Feedback</h2> 
+            <Link to="/">
+            <button onClick={handleSubmit} >submit</button>
+            </Link>
             <form className={classes.formcontent}>
                 <Grid container>
                     <Grid item xs={3}>

@@ -43,6 +43,10 @@ export const SET_EMAIL="SET_EMAIL"//31
 export const SET_FNAME="SET_FNAME"//32
 export const SET_LNAME="SET_LNAME"//33
 export const LOG_OUT="LOG_OUT"//34
+export const SET_COUNT="SET_COUNT"//35
+export const DELETE_COUNT=" DELETE_COUNT"//36
+export const CHECKOUT_COUNT="CHECKOUT_COUNT"//37
+
 
 //All restaurants section:
 //4
@@ -205,4 +209,19 @@ export const setLname=(data)=>({
 //34
 export const logOut=()=>({
     type:LOG_OUT
+})
+
+//35
+export const setCount=()=>({
+    type:SET_COUNT
+})
+
+//36
+export const setDelete=()=>({
+    type:DELETE_COUNT
+})
+
+//37
+export const checkOutCount=()=>({
+    type:CHECKOUT_COUNT
 })

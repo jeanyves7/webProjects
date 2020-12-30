@@ -1,14 +1,8 @@
 package com.cmeboot.app.controller;
 
 
-import com.cmeboot.app.model.Cart;
-import com.cmeboot.app.model.Client;
-import com.cmeboot.app.model.Purchased;
-import com.cmeboot.app.model.isLogged;
-import com.cmeboot.app.service.CartServiceImp;
-import com.cmeboot.app.service.ClientServiceImp;
-import com.cmeboot.app.service.IsLogedServiceImp;
-import com.cmeboot.app.service.PurchasedServiceImp;
+import com.cmeboot.app.model.*;
+import com.cmeboot.app.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -23,6 +17,9 @@ import java.util.Optional;
 @CrossOrigin(origins = "http://localhost:3000")
 @RequestMapping("/client")
 public class ClientController {
+
+    @Autowired
+    FeedbackServiceImp feedServ;
 
     @Autowired
     ClientServiceImp cloServ;
@@ -64,6 +61,7 @@ public class ClientController {
     @Transactional
     @GetMapping("logOut")
     public ResponseEntity<Client> logOut(){
+        cartServ.deleteAll();
         isServ.deleteAll();
         return new ResponseEntity<>(null,HttpStatus.OK);
     }
@@ -98,10 +96,15 @@ public class ClientController {
     }
 
 
+    @PostMapping("/feedback")
+    public ResponseEntity<Feedback> addFeed(@RequestBody Feedback fb){
+        fb.setIdC(cloServ.getClient(fb.getEmail()).getIdC());
+        return new ResponseEntity<>(feedServ.addFeed(fb),HttpStatus.OK);
+    }
+
     @Transactional
     @PostMapping("/purchased")
     public ResponseEntity<List<Cart>> purchase(@RequestBody List<Purchased> l){
-
         for(int i=0;i<l.size();++i){
             purServ.addItem(l.get(i));
         }

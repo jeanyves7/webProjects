@@ -30,6 +30,19 @@ public class Cart {
         this.price = price;
     }
 
+    @Override
+    public String toString() {
+        return "Cart{" +
+                "id=" + id +
+                ", idC=" + idC +
+                ", idI=" + idI +
+                ", img='" + img + '\'' +
+                ", name='" + name + '\'' +
+                ", price=" + price +
+                ", qty=" + qty +
+                '}';
+    }
+
     public Cart(Long id, Long idC, Long idI, String img, String name, Long price, Long qty) {
         this.id = id;
         this.idC = idC;

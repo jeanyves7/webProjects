@@ -26,7 +26,7 @@ export const getNItems =  async (restos) => {
    try{
     const Name=restos.action.action.name;
    //making the call
-    const res = await api.get(`Restaurants/name/${Name}`);
+    const res = await api.get(`items/name/${Name}`);
     return res.data;
    }catch (error) {
     console.log(error);
@@ -58,7 +58,7 @@ export const SignUp=async(data)=>{
 export const feedBack=async(data)=>{
     console.log(data)
     try{
-       const res=await api.post("/client/feedBack",data)
+       const res=await api.post("/client/feedback",data)
        return res.data;
     }catch(error){
         console.log(error);

@@ -17,7 +17,7 @@ import ShareIcon from '@material-ui/icons/Share';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import AddIcon from '@material-ui/icons/Add';
-import {addCart} from "../../actions/actions";
+import {addCart,setCount} from "../../actions/actions";
 import {useDispatch,useSelector} from "react-redux";
 
 const useStyles = makeStyles((theme) => ({
@@ -74,6 +74,7 @@ export default function RecipeReviewCard({id,av,titl,description,img,price}) {
         price:price,
         qty:1
     }
+    dispatch(setCount())
     dispatch(addCart(data));
   }
 

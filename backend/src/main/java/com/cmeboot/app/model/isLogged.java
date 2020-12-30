@@ -3,7 +3,7 @@ package com.cmeboot.app.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name="isLogged")
+@Table(name="islogged")
 public class isLogged {
 
     @Id
@@ -16,7 +16,19 @@ public class isLogged {
     private String firstN;
     private String lastN;
 
-    public isLogged(Long id,Long idC, String email, String password, String firstN, String lastN) {
+    @Override
+    public String toString() {
+        return "isLogged{" +
+                "id=" + id +
+                ", idC=" + idC +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", firstN='" + firstN + '\'' +
+                ", lastN='" + lastN + '\'' +
+                '}';
+    }
+
+    public isLogged(Long id, Long idC, String email, String password, String firstN, String lastN) {
         this.id=id;
         this.idC = idC;
         this.email = email;

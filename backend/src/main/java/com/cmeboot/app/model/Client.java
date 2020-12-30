@@ -13,6 +13,18 @@ public class Client {
     private String email;
     private String password;
     private String firstN;
+
+    @Override
+    public String toString() {
+        return "Client{" +
+                "idC=" + idC +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", firstN='" + firstN + '\'' +
+                ", lastN='" + lastN + '\'' +
+                '}';
+    }
+
     private String lastN;
 
     public Client(Long idC, String email, String password, String firstN, String lastN) {

@@ -17,6 +17,19 @@ public class Purchased {
     private Long price;
     private Long qty;
 
+    @Override
+    public String toString() {
+        return "Purchased{" +
+                "id=" + id +
+                ", idC=" + idC +
+                ", idI=" + idI +
+                ", img='" + img + '\'' +
+                ", name='" + name + '\'' +
+                ", price=" + price +
+                ", qty=" + qty +
+                '}';
+    }
+
     public Purchased() {
 
     }
