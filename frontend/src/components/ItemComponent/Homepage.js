@@ -93,9 +93,6 @@ const HomePage = () =>{
     const page= useSelector(state => state.Type.page);
     const size= useSelector(state => state.Type.size);
     
-
-
-
     const dispatch = useDispatch();
 
     //Dialog section:
@@ -152,14 +149,10 @@ const HomePage = () =>{
         <SnackBar />
         <SearchAppBar />
         <AppCarousel />
-        
-    
         {!empty ?
           <> 
         <Box  spacing={5} className={classes.RestoContainer} >
-        {console.log(Items)}
-          {Items.map(items=>(
-              
+          {Items.map(items=>(      
               <Box   p={1} m={1} key={items.id} className={classes.RestoMiniContainer} >
                   <Link onClick={()=>handleClickOpen(items.id)} to="" className={classes.linkText} >
                          <Card  className={classes.linkText} key={items.id} id={items.id} av={(items.type)[0]} titl={items.name} img={items.img} description={items.description} price={items.price} />
@@ -177,9 +170,7 @@ const HomePage = () =>{
         </Box>
         </>
         :
-   
   <Box className={classes.content}>
-     {console.log(Items)}
     <Typography variant="h5" > No content was found :'( </Typography>
   </Box>
   }
@@ -187,6 +178,5 @@ const HomePage = () =>{
   <Footer />
    </>
     );
-          }
-
+  }
 export default HomePage;

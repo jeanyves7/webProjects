@@ -10,7 +10,6 @@ function* SignUpWorker(action){
     try{
         const dat=action.payload;
         const signup=yield call(SignUp,dat)
-        console.log(signup)
     }catch(error){
         console.log(error);
     }

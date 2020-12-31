@@ -2,7 +2,7 @@ import React,{useState} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Grid, TextField, Paper, FormLabel,TextareaAutosize } from '@material-ui/core';
 import {useDispatch,useSelector} from "react-redux";
-import {sendFeed, setEmail} from "../../actions/actions"
+import {sendFeed, setEmail,herokuFeed} from "../../actions/actions"
 import { Link } from "react-router-dom";
 const useStyles = makeStyles((theme) => ({
     papercontent : {
@@ -64,7 +64,12 @@ export default function Contact() {
             num:number,
             feedback:feed,
         }
+        
         console.log(data)
+        const data2={
+            feedback:feed
+        }
+        dispatch(herokuFeed(data2))
         dispatch(sendFeed(data))
         setFName("")
         setLName("")

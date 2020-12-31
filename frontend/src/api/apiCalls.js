@@ -1,4 +1,5 @@
 import api from "./index"
+import herok from "./heroku"
 import {useDispatch,useSelector} from "react-redux";
 
 //api call for all the restaurants
@@ -125,6 +126,15 @@ export const checkClient=async()=>{
 export const logOut=async()=>{
     try{
         const res=await api.get("client/logOut")
+        return res.data
+    }catch(error){
+        console.log(error)
+    }
+}
+
+export const feedResult=async(data)=>{
+    try{
+        const res=await herok.post("/sentiment",data)
         return res.data
     }catch(error){
         console.log(error)

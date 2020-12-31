@@ -8,7 +8,6 @@ export function* LoadCartWatcher(){
 
 function* LoadCartWorker(){
     try{
-        console.log("watcher")
         const dat=yield call(loadCart)
         yield put(setCart(dat))
     }catch(error){

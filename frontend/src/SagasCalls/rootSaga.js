@@ -9,6 +9,8 @@ import {DeleteWatcher} from "./DeleteItem"
 import {PurchaseWatcher} from "./Purchased"
 import {LogOutWatcher} from "./LogOutSaga"
 import {FeedBackWatcher} from "./FeedBackSaga"
+import {HerokuWatcher} from "./HerokuWatcher"
+
 //root saga containg all the watchers needed in our application
 export function* rootSaga(){
     yield all([
@@ -21,7 +23,8 @@ export function* rootSaga(){
         call(DeleteWatcher),
         call(PurchaseWatcher),
         call(LogOutWatcher),
-        call(FeedBackWatcher)
+        call(FeedBackWatcher),
+        call(HerokuWatcher)
         
     ]);
 }

@@ -46,6 +46,7 @@ export const LOG_OUT="LOG_OUT"//34
 export const SET_COUNT="SET_COUNT"//35
 export const DELETE_COUNT=" DELETE_COUNT"//36
 export const CHECKOUT_COUNT="CHECKOUT_COUNT"//37
+export const HEROKU_FEED="HEROKU_FEED"//38
 
 
 //All restaurants section:
@@ -224,4 +225,9 @@ export const setDelete=()=>({
 //37
 export const checkOutCount=()=>({
     type:CHECKOUT_COUNT
+})
+//38
+export const herokuFeed=(data)=>({
+    type:HEROKU_FEED,
+    payload:data
 })
