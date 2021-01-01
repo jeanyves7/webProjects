@@ -4,6 +4,8 @@ import { Grid, TextField, Paper, FormLabel,TextareaAutosize } from '@material-ui
 import {useDispatch,useSelector} from "react-redux";
 import {sendFeed, setEmail,herokuFeed} from "../../actions/actions"
 import { Link } from "react-router-dom";
+import { Map, GoogleApiWrapper } from 'google-maps-react';
+
 const useStyles = makeStyles((theme) => ({
     papercontent : {
         margin: theme.spacing(5),
@@ -79,21 +81,24 @@ export default function Contact() {
     }
 
     return (
-        <Paper className={classes.papercontent}>
+        <Paper className={classes.papercontent} style={{opacity: 0.8}}>
            
             <h2 style={{ marginBottom:"50px" }} >Send us Your Feedback</h2> 
-            <Link to="/">
-            <button onClick={handleSubmit} >submit</button>
-            </Link>
+
+            <div style={{ marginBottom:"50px" }}>
+                <iframe width="100%" height="300" frameborder="0.5" scrolling="no" marginheight="0" marginwidth="0" id="gmap_canvas" src="https://maps.google.com/maps?width=520&amp;height=400&amp;hl=en&amp;q=Mansourieh%20+(Etech%20Store)&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe> 
+                <script type='text/javascript' src='https://embedmaps.com/google-maps-authorization/script.js?id=a669630dd434e9e054631a2f4dd55b23ef807e17'></script>
+            </div>
+            
             <form className={classes.formcontent}>
-                <Grid container>
+                <Grid container style={{ marginBottom:"50px", alignItems:"center" }}>
                     <Grid item xs={3}>
                         <FormLabel>First Name: </FormLabel>
                     </Grid>
                     <Grid item xs={9}>
                         <TextField className={classes.textfields} variant="outlined" label="First Name" onChange={handleF} />
                     </Grid>
-
+                
                     <Grid item xs={3}>
                         <FormLabel>Last Name: </FormLabel>
                     </Grid>
@@ -102,10 +107,10 @@ export default function Contact() {
                     </Grid>
 
                     <Grid item xs={3}>
-                        <FormLabel>Contact Tel :</FormLabel>
+                        <FormLabel> Contact Tel :</FormLabel>
                     </Grid>
                     <Grid item xs={9}>
-                        <Grid item xs={2}>
+                        <Grid item xs={3}>
                             <TextField className={classes.textfields} variant="outlined" label="Area Code" />
                         </Grid>
                         <Grid item xs={6}>
@@ -124,11 +129,14 @@ export default function Contact() {
                         <FormLabel>Feedback :</FormLabel>
                     </Grid>
                     <Grid item xs={9}>
-                        <TextareaAutosize className={classes.textfields} rowsMin={3} variant="outlined" placeholder="Empty" onChange={handleFeed} />
+                        <TextareaAutosize className={classes.textfields} rowsMin={3} variant="outlined" placeholder="Type in your feedback please" onChange={handleFeed} />
                     </Grid>
                    
                 </Grid>
             </form>
+            <Link to="/" style={{display: "flex", justifyContent: 'flex-end'}}>
+            <button onClick={handleSubmit} >submit</button>
+            </Link>
         </Paper>
     );
 }
