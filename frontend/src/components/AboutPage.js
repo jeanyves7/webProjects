@@ -28,9 +28,6 @@ export default function AboutPage() {
         <>
             <ButtonAppBar />
             <div className={classes.maincontainer}>
-                <div>
-                    <h2>This is the About us</h2>
-                </div>
                 <Contact />
             </div>
             <Footer />

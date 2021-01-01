@@ -81,20 +81,26 @@ body {
 
 /* Cart  */
 .Thankyou {
-  font-family: "Courier New", Courier, monospace;
-  font-size: 32px;
-  letter-spacing: 0px;
-  word-spacing: 2.8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 180px;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-size: 27px;
+  letter-spacing: 0.6px;
+  word-spacing: 2px;
+  color: #000000;
   font-weight: 700;
-  text-decoration: overline solid #1A237E;
-  font-style: normal;
+  text-decoration: none solid rgb(68, 68, 68);
+  font-style: italic;
   font-variant: small-caps;
-  text-transform: uppercase;
+  text-transform: lowercase;
   text-align: center;
   padding: 35px;
-  margin: 40px;
+  margin-bottom: 40px;
   background-image: linear-gradient(to right, #eea2a2 0%, #bbc1bf 19%, #57c6e1 42%, #b49fda 79%, #7ac5d8 100%);
-  border-radius: 20%;
+  border-bottom-left-radius: 20%;
+  border-bottom-right-radius: 20%;
   box-shadow: 0px 5px 20px rgb(71,71,71)
 
 }
