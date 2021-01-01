@@ -47,6 +47,10 @@ export const SET_COUNT="SET_COUNT"//35
 export const DELETE_COUNT=" DELETE_COUNT"//36
 export const CHECKOUT_COUNT="CHECKOUT_COUNT"//37
 export const HEROKU_FEED="HEROKU_FEED"//38
+export const SET_POSITIVE="SET_POSITIVE"//39
+export const SET_NEUTRAL="SET_NEUTRAL"//40
+export const SET_NEGATIVE="SET_NEGATIVE"//41
+
 
 
 //All restaurants section:
@@ -229,5 +233,21 @@ export const checkOutCount=()=>({
 //38
 export const herokuFeed=(data)=>({
     type:HEROKU_FEED,
+    payload:data
+})
+//39
+export const setPos=(data)=>({
+    type:SET_POSITIVE,
+    payload:data
+})
+
+//40
+export const setNeutre=(data)=>({
+    type:SET_NEUTRAL,
+    payload:data
+})
+//41
+export const setNeg=(data)=>({
+    type:SET_NEGATIVE,
     payload:data
 })

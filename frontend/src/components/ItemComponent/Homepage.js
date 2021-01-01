@@ -146,7 +146,7 @@ const HomePage = () =>{
        <>
        <ButtonAppBar />
        <div>
-        <SnackBar />
+       
         <SearchAppBar />
         <AppCarousel />
         {!empty ?

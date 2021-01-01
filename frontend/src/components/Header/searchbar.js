@@ -105,28 +105,7 @@ export default function SearchAppBar() {
       }
   }
 
-  //function to display the search bar input
-  // const displaySearchInput = () =>{
-  //   return ( 
-    
-  //     <div className={classes.search}>
-  //         <div className={classes.searchIcon}>
-  //             <SearchIcon  />
-  //         </div>
-  //         <InputBase
-  //             placeholder="Search…"
-  //             value={current}
-  //             onChange={updateSearch}
-  //             onKeyDown={handleKeyDown}
-  //             classes={{
-  //                 root: classes.inputRoot,
-  //                 input: classes.inputInput,
-  //               }}
-  //             inputProps={{ 'aria-label': 'search' }}
-  //         />
-  //     </div>
-  //   );
-  // }
+ 
 
 return (
   <div className={classes.root}>

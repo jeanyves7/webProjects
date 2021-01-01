@@ -6,8 +6,6 @@ export function* DeleteWatcher(){
     yield takeLatest(DELETE_ITEM,DeleteWorker)
 }
 
-
-
 function* DeleteWorker(action){
     try{
         const cart=yield call(deleteItem,{action})

@@ -10,7 +10,6 @@ function* CartWorker(action){
     try{
         const dat=action.payload;
         const cart=yield call(addCart,dat)
-        console.log("ADD "+cart)
     }catch(error){
         console.log(error);
     }

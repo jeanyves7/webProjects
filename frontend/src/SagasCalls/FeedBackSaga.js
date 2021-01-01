@@ -10,7 +10,6 @@ function* FeedBackWorker(action){
     try{
         const dat=action.payload;
         const feed=yield call(feedBack,dat)
-        console.log(feed)
     }catch(error){
         console.log(error);
     }

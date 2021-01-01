@@ -12,10 +12,13 @@ import './App.css';
 import Signin from "./loginPage/login.component";
 import Signup from "./loginPage/signup.component";
 
+import Snack from "./components/snackBar/FeedBackSnackBar"
+
 
 function App() {
-  return (      
+  return (  
       <Router>
+           <Snack/>  
           <Switch>
               <Route exact path="/"  component={Home} />
               <Route path="/cart" component={Addcart} />
