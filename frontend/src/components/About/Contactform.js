@@ -1,10 +1,13 @@
 import React,{useState} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
+import Button from '@material-ui/core/Button';
 import { Grid, TextField, Paper, FormLabel,TextareaAutosize } from '@material-ui/core';
 import {useDispatch,useSelector} from "react-redux";
 import {sendFeed, setEmail,herokuFeed} from "../../actions/actions"
 import { Link } from "react-router-dom";
-import { Map, GoogleApiWrapper } from 'google-maps-react';
+
+import Icon from '@material-ui/core/Icon';
+
 
 const useStyles = makeStyles((theme) => ({
     papercontent : {
@@ -20,6 +23,9 @@ const useStyles = makeStyles((theme) => ({
     },
     textfields: {
         width:"100%"
+    },
+    button:{
+        backgroundColor: "rgb(234,193,89)"
     }
 }));
 
@@ -81,6 +87,7 @@ export default function Contact() {
     }
 
     return (
+        
         <Paper className={classes.papercontent} style={{opacity: 0.8}}>
            
             <h2 style={{ marginBottom:"50px" }} >Send us Your Feedback</h2> 
@@ -135,7 +142,15 @@ export default function Contact() {
                 </Grid>
             </form>
             <Link to="/" style={{display: "flex", justifyContent: 'flex-end'}}>
-            <button onClick={handleSubmit} >submit</button>
+            <Button
+                variant="contained"
+                color="primary"
+                endIcon={<Icon>send</Icon>}
+                className={classes.button}
+                onClick={handleSubmit}
+                >
+                Submit
+            </Button>
             </Link>
         </Paper>
     );
