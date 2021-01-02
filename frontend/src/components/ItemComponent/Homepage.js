@@ -13,11 +13,11 @@ import AppCarousel from "../AppCarousel";
 import Footer from '../Footer';
 import ButtonAppBar from '../Header/Header';
 
-const useStyles=makeStyles({
+const useStyles=makeStyles((theme)=>({
     appBar: {
         position: 'relative',
       },
-    RestoContainer:{
+    ItemContainer:{
       paddingTop:"20px",
       paddingLeft:"100px",
       paddingRight:"100px",
@@ -27,9 +27,12 @@ const useStyles=makeStyles({
       flexFlow:"row wrap" ,
       flexWrap:"wrap"   
     },
-    RestoMiniContainer:{
+    ItemMiniContainer:{
         height: "400px",
         width: "40%",
+        [theme.breakpoints.down("sm")]:{
+          width: "100%",
+        },
         textAlign:"center",
         marginLeft:"100px",
         marginBottom:"40px",
@@ -68,7 +71,7 @@ const useStyles=makeStyles({
         textAlign:"center",
       }
       
-})
+}));
 
 
 const Transition = React.forwardRef(function Transition(props, ref) {
@@ -150,9 +153,9 @@ const HomePage = () =>{
         <AppCarousel />
         {!empty ?
           <> 
-        <Box  spacing={5} className={classes.RestoContainer} >
+        <Box  spacing={5} className={classes.ItemContainer} >
           {Items.map(items=>(      
-              <Box   p={1} m={1} key={items.id} className={classes.RestoMiniContainer} >
+              <Box   p={1} m={1} key={items.id} className={classes.ItemMiniContainer} >
                   <Link onClick={()=>handleClickOpen(items.id)} to="" className={classes.linkText} >
                          <Card  className={classes.linkText} key={items.id} id={items.id} av={(items.type)[0]} titl={items.name} img={items.img} description={items.description} price={items.price} />
                   </Link>

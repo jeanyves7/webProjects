@@ -1,5 +1,5 @@
 import {takeLatest, call, put} from 'redux-saga/effects'
-import {CHECK_IN,setIn,setIdClient,setEmail,setFname,setLname} from "../actions/actions"
+import {CHECK_IN,setIn,setIdClient,setEmail,setFname,setLname,setErrorLog,setSuccesLog} from "../actions/actions"
 import {CheckLogIn,checkClient} from "../api/apiCalls"
 
 export function* checkInWatcher(){
@@ -19,6 +19,9 @@ function* checkInWorker(action){
             yield put(setIn());
             yield put(setIdClient(loge.idC)) 
             yield put(setEmail(loge.email))
+            yield put(setSuccesLog(true))
+        }else{
+            yield put(setErrorLog(true))
         }
     }catch(error){
         console.log(error);

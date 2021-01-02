@@ -1,9 +1,12 @@
 import React from "react";
 import { Carousel } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import {Grid} from  "@material-ui/core";
 
 export default function() {
     return (
+        <Grid style={{display:"flex",justifyContent:"center",marginLeft:"5%"}}>
+            <Grid item xs={10} sm={6} >
         <Carousel>
             <Carousel.Item>
                 <img
@@ -41,5 +44,8 @@ export default function() {
                 </Carousel.Caption>
             </Carousel.Item>
         </Carousel>
+        </Grid>
+        </Grid>
+        
     );
 } 

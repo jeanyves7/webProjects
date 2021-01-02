@@ -30,6 +30,7 @@ export const LOAD_CART="LOAD_CART"//27
 export const UPDATE_CART="UPDATE_CART"//28
 export const DELETE_ITEM="DELETE_ITEM"//29
 export const PURCHASED="PURCHASED"//30
+
 export const SET_EMAIL="SET_EMAIL"//31
 export const SET_FNAME="SET_FNAME"//32
 export const SET_LNAME="SET_LNAME"//33
@@ -37,11 +38,15 @@ export const LOG_OUT="LOG_OUT"//34
 export const SET_COUNT="SET_COUNT"//35
 export const DELETE_COUNT=" DELETE_COUNT"//36
 export const CHECKOUT_COUNT="CHECKOUT_COUNT"//37
+
 export const HEROKU_FEED="HEROKU_FEED"//38
+
 export const SET_POSITIVE="SET_POSITIVE"//39
 export const SET_NEUTRAL="SET_NEUTRAL"//40
 export const SET_NEGATIVE="SET_NEGATIVE"//41
 
+export const SET_ERROR_LOG="SET_ERROR_LOG"//42
+export const SET_SUCCESS_LOG="SET_SUCCESS_LOG"//43
 
 
 //All restaurants section:
@@ -237,5 +242,16 @@ export const setNeutre=(data)=>({
 //41
 export const setNeg=(data)=>({
     type:SET_NEGATIVE,
+    payload:data
+})
+//42
+export const setErrorLog=(data)=>({
+    type:SET_ERROR_LOG,
+    payload:data
+})
+
+//43
+export const setSuccesLog=(data)=>({
+    type:SET_SUCCESS_LOG,
     payload:data
 })

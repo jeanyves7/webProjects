@@ -3,6 +3,7 @@ import Aps from "./Appcompo";
 import { Link } from "react-router-dom";
 import {checkIn} from "../actions/actions"
 import {useDispatch,useSelector} from "react-redux";
+import LogSnack from "../components/snackBar/LogInSnack"
 
 const  Login=()=>  {
   
@@ -30,6 +31,7 @@ const  Login=()=>  {
     }
         return (
             <div className="App">
+              
                 <Aps />
                 <div className="auth-wrapper">
                     <div className="auth-inner">
