@@ -19,7 +19,7 @@ export default function PaginationControlled() {
   //getting the actual page from the store
   const page= useSelector(state => state.Type.page);
   //getting the total number of pages available in the backend server
-  const pages=useSelector(state=>state.Restaurants.totalPages);
+  const pages=useSelector(state=>state.Item.totalPages);
   
   const dispatch = useDispatch();
 

@@ -1,20 +1,11 @@
 //Every action type will be associated a number in the comments
-
-import { purchased } from "../api/apiCalls";
-
-
-
-//actions for handling the Restaurants 
+ 
 export const SET_ITEM="SET_ITEM";     //4
 export const LOAD_ITEM="LOAD_ITEM";   //5
 export const LOAD_NRESTO="LOAD_NRESTO"; //6
 
 //actions for handling the Loaders while fetching the data
 export const LOADING_ITEM_DATA="LOADING_ITEM_DATA";        //7
-
-
-//actions for handling the errirs
-export const SET_RESTO_ERROR="SET_RESTO_ERROR";         //9
 
 
 //actions related to the general search
@@ -85,10 +76,7 @@ export const loadingItem= (load) =>({
 
 //Error Section:
 //9 => All restaurants
-export const setRestoError=(data)=>({
-    type:SET_RESTO_ERROR,
-    payload:data,
-});
+
 
 
 

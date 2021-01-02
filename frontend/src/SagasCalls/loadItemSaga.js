@@ -1,5 +1,5 @@
 import {takeLatest, call, put} from 'redux-saga/effects'
-import {LOAD_ITEM,setItem,loadingItem,setRestoError,setTotalPages} from "../actions/actions"
+import {LOAD_ITEM,setItem,loadingItem,setTotalPages} from "../actions/actions"
 import {getItems,getNItems} from "../api/apiCalls";
 
 //watcher that will be pass the to the root saga
@@ -37,7 +37,7 @@ function* LoadItemFlow(action){
     isloading=false;
     yield put(loadingItem(isloading));
     //setting the snackBar to be visible
-    yield put(setRestoError(true));
+   
     return;
    }
 }

@@ -8,7 +8,6 @@ import {Link} from "react-router-dom";
 import Info from "./ItemInfo";
 import {loadItem,setPage,checkIn} from "../../actions/actions";
 import Loader from "../loader/loaders";
-import SnackBar from "../snackBar/RestosnackBars";
 import Card from "../Card/Cards";
 import AppCarousel from "../AppCarousel";
 import Footer from '../Footer';
@@ -81,12 +80,12 @@ const HomePage = () =>{
     const classes=useStyles();
     
     // this selector fetch for us the stored restaurants
-    const Items = useSelector(state => state.Restaurants.Items);
+    const Items = useSelector(state => state.Item.Items);
     
 
   
     //This loading state is for the loaders
-    const Loading=useSelector(state=>state.Restaurants.loading);
+    //const Loading=useSelector(state=>state.Item.loading);
     
     //States responsable for displaying the current type and page and size per page
     const type= useSelector(state => state.Type.types);

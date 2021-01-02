@@ -105,7 +105,27 @@ export default function SearchAppBar() {
       }
   }
 
- 
+  const displaySearchInput = () =>{
+    return ( 
+    <Box  p={1}>
+      <div className={classes.search}>
+          <div className={classes.searchIcon}>
+              <SearchIcon  />
+          </div>
+          <InputBase
+              placeholder="Search…"
+              value={current}
+              onChange={updateSearch}
+              onKeyDown={handleKeyDown}
+              classes={{
+                  root: classes.inputRoot,
+                  input: classes.inputInput,
+                }}
+              inputProps={{ 'aria-label': 'search' }}
+          />
+      </div>
+    </Box>);
+  }
 
 return (
   <div className={classes.root}>
@@ -113,9 +133,9 @@ return (
         <Toolbar>
             <Box   className={classes.headers}>
               <Box  p={1} className="search-form">
-                  {!isMobile? (
-                    <input className="search-bar" type="text" value={current} onChange={updateSearch} onKeyDown={handleKeyDown} inputProps={{ 'aria-label': 'search' }}/>
-                )
+              {!isMobile? (
+                displaySearchInput()
+             )
                     // if we are in mobile forme we don't want to display the searchBar input 
                   : <> </>}
 
@@ -140,7 +160,7 @@ return (
             </Box>
       </Toolbar>
     </AppBar>
-      {/* {isMobile?
+       {isMobile?
           // if we are in mobile forme we want to display the search input in a second AppBar
             <AppBar position="static" >
               <Toolbar>
@@ -149,7 +169,7 @@ return (
                 </Box>
               </Toolbar>
             </AppBar>
-      :<> </> */}
+      :<> </> }
   </div>
   );
 }

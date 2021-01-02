@@ -1,8 +1,7 @@
 import api from "./index"
 import herok from "./heroku"
-import {useDispatch,useSelector} from "react-redux";
 
-//api call for all the restaurants
+//api call for all the items
 export const getItems =  async (restos) => { 
     try{
     //parsing the results of the action payload to be fit the api call
@@ -22,7 +21,7 @@ export const getItems =  async (restos) => {
     }
 }
 
-//api call to get the restaurants by name
+//api call to get the items by name
 export const getNItems =  async (restos) => { 
    try{
     const Name=restos.action.action.name;

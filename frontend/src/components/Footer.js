@@ -2,6 +2,7 @@ import React from "react";
 import {Box, Grid} from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import { Twitter, Facebook, Instagram, LinkedIn } from '@material-ui/icons';
+import {Link} from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
     upperContainer: {
@@ -40,8 +41,12 @@ export default function Footer() {
                 </Grid>
                 <Grid item xs={5}>
                     <ul className={classes.bar}>
-                        <li>Home</li>
+                        <Link to="/">
+                        <li style={{color:"white"}}>Home</li>
+                        </Link>
+                        <Link to="/About" style={{color:"white"}}>
                         <li>About us</li>
+                        </Link>
                     </ul>
                 </Grid>
                 <Grid item xs={4} className={classes.social}>
