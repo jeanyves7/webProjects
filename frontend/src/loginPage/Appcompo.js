@@ -7,11 +7,11 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 function Aps() {
   return (
         
-          <nav className="navbar navbar-expand-lg navbar-light fixed-top">
+          <nav className="navbar navbar-expand-lg navbar-light">
             <div className="container">
               <Link className="navbar-brand" to={"/"}>E-Tech</Link>
-              <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
-                <ul className="navbar-nav ml-auto">
+              <div className="" id="navbarTogglerDemo02">
+                <ul className="navbar-nav ml-auto centered">
                   <li className="nav-item">
                     <Link className="nav-link" to={"/signin"}>Login</Link>
                   </li>

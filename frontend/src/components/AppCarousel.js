@@ -6,7 +6,7 @@ import {Grid} from  "@material-ui/core";
 export default function() {
     return (
         <Grid style={{display:"flex",justifyContent:"center",marginLeft:"5%"}}>
-            <Grid item xs={10} sm={6} >
+            <Grid item xs={12} sm={12} >
         <Carousel>
             <Carousel.Item>
                 <img

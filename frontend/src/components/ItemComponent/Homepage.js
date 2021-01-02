@@ -12,6 +12,7 @@ import Card from "../Card/Cards";
 import AppCarousel from "../AppCarousel";
 import Footer from '../Footer';
 import ButtonAppBar from '../Header/Header';
+import {Grid} from  "@material-ui/core";
 
 const useStyles=makeStyles((theme)=>({
     appBar: {
@@ -19,8 +20,8 @@ const useStyles=makeStyles((theme)=>({
       },
     ItemContainer:{
       paddingTop:"20px",
-      paddingLeft:"100px",
-      paddingRight:"100px",
+      paddingLeft:"7%",
+      paddingRight:"7%",
       display:"flex",
       justifyContent:"center",
       alignItems:"center",
@@ -34,7 +35,7 @@ const useStyles=makeStyles((theme)=>({
           width: "100%",
         },
         textAlign:"center",
-        marginLeft:"100px",
+        marginLeft:"7%",
         marginBottom:"40px",
         marginTop:"40px"
         
@@ -154,15 +155,16 @@ const HomePage = () =>{
         {!empty ?
           <> 
         <Box  spacing={5} className={classes.ItemContainer} >
-          {Items.map(items=>(      
-              <Box   p={1} m={1} key={items.id} className={classes.ItemMiniContainer} >
-                  <Link onClick={()=>handleClickOpen(items.id)} to="" className={classes.linkText} >
-                         <Card  className={classes.linkText} key={items.id} id={items.id} av={(items.type)[0]} titl={items.name} img={items.img} description={items.description} price={items.price} />
-                  </Link>
-                  <Dialog fullScreen open={open===items.id} onClose={handleClose} TransitionComponent={Transition} key={1} >
-                      <Info  key={items.id}  name={items.name} type={items.type} cost={items.price}  description={items.description} image={items.img} close={handleClose}  />
-                  </Dialog>
-              </Box>
+          {Items.map(items=>(     
+                <Box   p={1} m={1} key={items.id} className={classes.ItemMiniContainer} >
+                    <Link onClick={()=>handleClickOpen(items.id)} to="" className={classes.linkText} >
+                          <Card  className={classes.linkText} key={items.id} id={items.id} av={(items.type)[0]} titl={items.name} img={items.img} description={items.description} price={items.price} />
+                    </Link>
+                    <Dialog fullScreen open={open===items.id} onClose={handleClose} TransitionComponent={Transition} key={1} >
+                        <Info  key={items.id}  name={items.name} type={items.type} cost={items.price}  description={items.description} image={items.img} close={handleClose}  />
+                    </Dialog>
+                </Box>
+           
          ))}
         </Box>
         <Box  display="flex" style={{textAlign:"center", margin: "20px"}} >

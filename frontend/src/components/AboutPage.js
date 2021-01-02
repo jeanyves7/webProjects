@@ -28,7 +28,11 @@ export default function AboutPage() {
         <>
             <ButtonAppBar />
             <div className={classes.maincontainer}>
-                <Contact />
+                <Grid>
+                    <Grid item xs={12} sm={8} style={{margin:"auto"}}>
+                    <Contact />
+                    </Grid>
+                </Grid>
             </div>
             <Footer />
         </>

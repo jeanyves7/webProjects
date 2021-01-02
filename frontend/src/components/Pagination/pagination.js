@@ -29,7 +29,7 @@ export default function PaginationControlled() {
   };
   return (
     <div className={classes.root}>
-      <Pagination count={pages} page={page} onChange={handleChange} color="secondary" showFirstButton showLastButton  />
+      <Pagination count={pages} page={page} onChange={handleChange} color="lightblue" showFirstButton showLastButton  />
     </div>
   );
 }

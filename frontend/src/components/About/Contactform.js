@@ -12,8 +12,7 @@ import Icon from '@material-ui/core/Icon';
 const useStyles = makeStyles((theme) => ({
     papercontent : {
         margin: theme.spacing(5),
-        padding: theme.spacing(3),
-        width: "60%"
+        padding: theme.spacing(3)
     },
     formcontent: {
         "& .MuiInputBase-root" : {
@@ -99,43 +98,43 @@ export default function Contact() {
             
             <form className={classes.formcontent}>
                 <Grid container style={{ marginBottom:"50px", alignItems:"center" }}>
-                    <Grid item xs={3}>
+                    <Grid item xs={12} sm={3}>
                         <FormLabel>First Name: </FormLabel>
                     </Grid>
-                    <Grid item xs={9}>
+                    <Grid item xs={12} sm={9}>
                         <TextField className={classes.textfields} variant="outlined" label="First Name" onChange={handleF} />
                     </Grid>
                 
-                    <Grid item xs={3}>
+                    <Grid item xs={12} sm={3}>
                         <FormLabel>Last Name: </FormLabel>
                     </Grid>
-                    <Grid item xs={9}>
+                    <Grid item xs={12} sm={9}>
                         <TextField className={classes.textfields} variant="outlined" label="Last Name" onChange={handleL} />
                     </Grid>
 
-                    <Grid item xs={3}>
+                    <Grid item xs={12} sm={3}>
                         <FormLabel> Contact Tel :</FormLabel>
                     </Grid>
-                    <Grid item xs={9}>
-                        <Grid item xs={3}>
+                    <Grid item xs={12} sm={9}>
+                        <Grid item xs={4} sm={3}>
                             <TextField className={classes.textfields} variant="outlined" label="Area Code" />
                         </Grid>
-                        <Grid item xs={6}>
+                        <Grid item xs={8} sm={6}>
                             <TextField className={classes.textfields} variant="outlined" label="Tel. number" onChange={handleNum} />
                         </Grid>
                     </Grid>
 
-                    <Grid item xs={3}>
+                    <Grid item xs={12} sm={3}>
                         <FormLabel>Email :</FormLabel>
                     </Grid>
-                    <Grid item xs={9}>
+                    <Grid item xs={12} sm={9}>
                         <TextField className={classes.textfields} variant="outlined" label="Email" onChange={handleEmail} />
                     </Grid>
 
-                    <Grid item xs={3}>
+                    <Grid item xs={12} sm={3}>
                         <FormLabel>Feedback :</FormLabel>
                     </Grid>
-                    <Grid item xs={9}>
+                    <Grid item xs={12} sm={9}>
                         <TextareaAutosize className={classes.textfields} rowsMin={3} variant="outlined" placeholder="Type in your feedback please" onChange={handleFeed} />
                     </Grid>
                    

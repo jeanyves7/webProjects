@@ -24,7 +24,8 @@ const useStyles = makeStyles((theme) => ({
     position: 'relative',
     borderRadius: theme.shape.borderRadius,
     boxShadow: "0px 5px 5px rgb(71,71,71)",
-    backgroundImage: "linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%)",
+    backgroundColor: "white",
+    // backgroundImage: "linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%)",
     '&:hover': {
       boxShadow: "0 16px 70px -12.125px rgba(0,0,0,0.3)"
     },
@@ -38,6 +39,7 @@ const useStyles = makeStyles((theme) => ({
   },
   searchIcon: {
     padding: theme.spacing(0, 2),
+    backgroundColor: "lightblue",
     height: '100%',
     position: 'absolute',
     pointerEvents: 'none',

@@ -41,38 +41,40 @@ const SignUp = ()=> {
         return (
             <div className="App">  
                 <Aps />
-                <div className="auth-wrapper">
-                    <div className="auth-inner">
-                        <form>
-                            <h3>Sign Up</h3>
+                <div className="container marg-top">
+                    <div className="row">
+                        <div className="auth-inner col-10 col-md-5">
+                            <form>
+                                <h3>Sign Up</h3>
 
-                            <div className="form-group">
-                                <label>First name</label>
-                                <input type="text" className="form-control" placeholder="First name" onChange={handleF} />
-                            </div>
+                                <div className="form-group">
+                                    <label>First name</label>
+                                    <input type="text" className="form-control" placeholder="First name" onChange={handleF} />
+                                </div>
 
-                            <div className="form-group">
-                                <label>Last name</label>
-                                <input type="text" className="form-control" placeholder="Last name" onChange={handleL} />
-                            </div>
+                                <div className="form-group">
+                                    <label>Last name</label>
+                                    <input type="text" className="form-control" placeholder="Last name" onChange={handleL} />
+                                </div>
 
-                            <div className="form-group">
-                                <label>Email address</label>
-                                <input type="email" className="form-control" placeholder="Enter email" onChange={handleEmail} />
-                            </div>
+                                <div className="form-group">
+                                    <label>Email address</label>
+                                    <input type="email" className="form-control" placeholder="Enter email" onChange={handleEmail} />
+                                </div>
 
-                            <div className="form-group">
-                                <label>Password</label>
-                                <input type="password" className="form-control" placeholder="Enter password" onChange={handlePass} />
-                            </div>
+                                <div className="form-group">
+                                    <label>Password</label>
+                                    <input type="password" className="form-control" placeholder="Enter password" onChange={handlePass} />
+                                </div>
 
-                            <Link to="/">
-                                <button className="btn btn-primary btn-block" onClick={handleS}>Sign Up</button>
-                            </Link>
-                            <p className="forgot-password text-right">
-                                Already registered <a href="/signin">sign in?</a>
-                            </p>
-                        </form>
+                                <Link to="/">
+                                    <button className="btn btn-primary btn-block" onClick={handleS}>Sign Up</button>
+                                </Link>
+                                <p className="forgot-password text-right">
+                                    Already registered <a href="/signin">sign in?</a>
+                                </p>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
