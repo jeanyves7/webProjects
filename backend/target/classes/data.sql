@@ -1,5 +1,21 @@
 INSERT INTO items(name,type,price,description,img) Values
-('macBook Air','Electronics','1250','MACBOOK PRO- 13.3- CORE I5- 8GB- 256GB SSD- SPACE GRAY','/Gallery/Micro.jpg'),
-('Sharp refrigerator','Kitchen','1875','MULTI-FUNCTION LCD SCREEN,?HYBRID COOLING PANELMULTI-FUNCTION LCD SCREEN,HYBRID COOLING PANEL,26 FEET,INVERTER','/Gallery/sharp.jpg');
-
-
+('macBook Air','Laptop','1250','MACBOOK PRO- 13.3- CORE I5- 8GB- 256GB SSD- SPACE GRAY','/Gallery/Micro.jpg'),
+('Lenovo','Laptop','1100','Lenovo laptop L3 81WE011UUS Platinum Grey','/Gallery/Lenovo L3.jpg'),
+('HP','Laptop','1050','HP laptop Pavilion x360 Convertible 14-dh1026ne','/Gallery/HP Pavillon.jpg'),
+('Dell','Laptop','729','Dell laptop Latitude 3510','/Gallery/Dell 3510.jpg'),
+('Lenovo','Laptop','795','Lenovo laptop ThinkPad E15 20RD001QED','/Gallery/Lenovo Thinkpad.jpg'),
+('Acer','Laptop','800','Acer Swift 7 SF514-53T-79FQ','/Gallery/Acer 7.jpg'),
+('HP','Laptop','950','HP ProBook 450 G7 (8MH11EA)','/Gallery/Hp probook.jpg'),
+('iphone 12','Iphone','699','5.4” or 6.1” Super Retina XDR display3','/Gallery/iphone 12.jpg'),
+('iphone 12 pro','Iphone','999','6.1” or 6.7” Super Retina XDR display3 5G cellular4','/Gallery/iphone 12 pro.jpg'),
+('iphone se','Iphone','399','4.7” Retina HD display 4G LTE cellular4','/Gallery/iphone se.jpg'),
+('MSI GH70','Headset','99','MSI Immerse GH70 Gaming Headset','/Gallery/MSI.jpg'),
+('MSI GH60','Headset','199','MSI Immerse GH60 Gaming Headset','/Gallery/GH60.jpg'),
+('Razer RZ04','Headset','149','4.7” Retina HD display 4GRazer RZ04-02051000-R3M1 Kraken LTE cellular4','/Gallery/Razer.jpg'),
+('XPG H30','Headset','59','XPG EMIX H30 SE Gaming Wired Headset','/Gallery/XPG.jpg'),
+('Logitech','Speakers','59','Logitech Ultimate Ears Wonderboom Portable Wireless Speaker','/Gallery/Logitech.jpg'),
+('Thermaltake','Speakers','59','Thermaltake BATTLE DRAGON HT-GVD-DISPBK-01 Wireless Speakers','/Gallery/Thermaltake.jpg'),
+('Genius','Speakers','59','Genius SP-i250G Portable Speaker','/Gallery/Genius.jpg'),
+('Generic','Speakers','59','Generic Speakers USB','/Gallery/Generic.jpg'),
+('Generic 120W','Speakers','59','Generic 120W Speakers','/Gallery/Generic 120W.jpg'),
+('iphone 11','Iphone','599','6.1” Liquid Retina HD display3 4G LTE cellular4','/Gallery/iphone 11.jpg');

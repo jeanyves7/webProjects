@@ -8,8 +8,8 @@
         <version>2.3.5.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.cmeboot</groupId>
-    <artifactId>cme-restaurant-app</artifactId>
+    <groupId>com.Etech</groupId>
+    <artifactId>Etech-app</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>cme-restaurant-app</name>
     <description>Restaurant project for Spring Boot</description>
