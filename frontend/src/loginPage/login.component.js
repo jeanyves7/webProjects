@@ -3,7 +3,6 @@ import Aps from "./Appcompo";
 import { Link } from "react-router-dom";
 import {checkIn} from "../actions/actions"
 import {useDispatch,useSelector} from "react-redux";
-import LogSnack from "../components/snackBar/LogInSnack"
 
 const  Login=()=>  {
   
@@ -11,15 +10,12 @@ const  Login=()=>  {
     const [password,SetPassword]=useState("");
 
     const dispatch = useDispatch();
-
     const handleEmail=(e)=>{
         SetEmail(e.target.value)
     }
-
     const handlePass=(e)=>{
         SetPassword(e.target.value)
     }
-
 
     const handleSubmit=()=>{
         const data={
@@ -31,7 +27,6 @@ const  Login=()=>  {
     }
         return (
             <div className="App">
-              
                 <Aps />
                 <div className="container marg-top">
                     <div className="row">
@@ -66,8 +61,7 @@ const  Login=()=>  {
                         </div>
                     </div>
                 </div>
-            </div>
-        );
-    }
-
+        </div>
+    );
+}
 export default Login

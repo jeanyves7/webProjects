@@ -1,4 +1,4 @@
-import {SET_IN,SET_OUT,SET_IDC,SET_EMAIL,SET_FNAME,SET_LNAME,SET_ERROR_LOG,SET_SUCCESS_LOG} from "../actions/actions"
+import {SET_CONNECTION_ERROR,SET_IN,SET_OUT,SET_IDC,SET_EMAIL,SET_FNAME,SET_LNAME,SET_ERROR_LOG,SET_SUCCESS_LOG} from "../actions/actions"
 
 const initial={
     logIn:false,
@@ -8,6 +8,7 @@ const initial={
     Lname:"",
     invalid:false,
     success:false,
+    conn:false
 }
 
 const LoggedInReducer=(state=initial,action)=>{
@@ -28,7 +29,9 @@ const LoggedInReducer=(state=initial,action)=>{
         case SET_ERROR_LOG:
             return{...state,invalid:action.payload}      
         case SET_SUCCESS_LOG:
-            return {...state,success:action.payload}       
+            return {...state,success:action.payload} 
+        case SET_CONNECTION_ERROR:
+            return {...state,conn:action.payload}      
         default:
             return state    
     }

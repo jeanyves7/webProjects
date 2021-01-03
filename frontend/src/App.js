@@ -13,13 +13,13 @@ import Signin from "./loginPage/login.component";
 import Signup from "./loginPage/signup.component";
 
 import Snack from "./components/snackBar/FeedBackSnackBar"
-
+import LogSnack from "./components/snackBar/LogInSnack"
 
 
 function App() {
   return (  
       <Router>
-            
+          <LogSnack/>
            <Snack/>  
           <Switch>
               <Route exact path="/"  component={Home} />

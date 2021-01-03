@@ -47,6 +47,7 @@ export const SET_NEGATIVE="SET_NEGATIVE"//41
 
 export const SET_ERROR_LOG="SET_ERROR_LOG"//42
 export const SET_SUCCESS_LOG="SET_SUCCESS_LOG"//43
+export const SET_CONNECTION_ERROR="SET_CONNECTION_ERROR"//44
 
 
 //All restaurants section:
@@ -253,5 +254,10 @@ export const setErrorLog=(data)=>({
 //43
 export const setSuccesLog=(data)=>({
     type:SET_SUCCESS_LOG,
+    payload:data
+})
+//44
+export const setConnError=(data)=>({
+    type:SET_CONNECTION_ERROR,
     payload:data
 })
