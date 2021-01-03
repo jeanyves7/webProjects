@@ -89,7 +89,7 @@ const HomePage = () =>{
 
   
     //This loading state is for the loaders
-    //const Loading=useSelector(state=>state.Item.loading);
+    const Loading=useSelector(state=>state.Item.loading);
     
     //States responsable for displaying the current type and page and size per page
     const type= useSelector(state => state.Type.types);
@@ -147,6 +147,8 @@ const HomePage = () =>{
   
     return (
        <>
+	   {Loading? <Loader/> : 
+	   <>
        <ButtonAppBar />
        <div>
        
@@ -180,6 +182,8 @@ const HomePage = () =>{
   }
   </div>
   <Footer />
+  </>
+	   }
    </>
     );
   }
